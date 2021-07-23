@@ -21,19 +21,19 @@
             <div>
                 <label for="name">Имя</label>
                 <input type="text" name="name" value="Олег" id="name" placeholder="Иван Иванов"/>
-                <label id="name-mes">Необходимо указать имя</label>
+                <p id="name-mes">Необходимо указать имя</p>
             </div>
 
             <div>
                 <label for="tel">Телефон</label>
                 <input type="tel" value="+7 (900) 800 70 60" id="tel" placeholder="+7 (123) 456 78 90"/>
-                <label id="tel-mes">Проверьте введенный телефон</label>
+                <p id="tel-mes">Проверьте введенный телефон</p>
             </div>
 
             <div>
                 <label for="email">Эл. почта</label>
                 <input type="email" name="email" value="invalid@mail" id="email" placeholder="example@email.com"/>
-                <label id="email-mes">Проверьте введённый email</label>
+                <p id="email-mes">Проверьте введённый email</p>
             </div>
 
         </section>
@@ -41,36 +41,102 @@
         <div>
             <label for="message">Сообщение</label>
             <textarea name="message" rows="5" id="message" placeholder="Отзыв">Добрый день!</textarea>
-            <label id="mes-mes">Введите сообщение</label>
+            <p id="message-mes">Введите сообщение</p>
+            <p id="no-contact-mes">Укажите хотя бы один из способов обратной связи</p>
         </div>
 
 
         <p>Отправляя форму, вы соглашаетесь с <a href="#">пользовательским соглашением</a> и <a href="#">политикой
             конфиденциальности</a></p>
 
-        <input type="submit" id="submit" value="Отправить"/>
+        <input type="button" id="submit" value="Отправить"/>
 
     </form>
 </div>
 <script>
-    function validateForm(){
-        name = document.getElementById('name').textContent
-        tel = document.getElementById('tel').textContent
-        email = document.getElementById('email').textContent
-        message = document.getElementById('message').textContent
+    function validateForm() {
+        name = document.getElementById('name').value
+        tel = document.getElementById('tel').value
+        email = document.getElementById('email').value
+        message = document.getElementById('message').value
 
-        if (name == "")
-            document.getElementById('name-mes').style.visibility = "visible"
-            return
+        function emailIsValid(email) {
+            var regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (regex.test(String(email).toLowerCase()))
+                return 1
+            else
+                return 0
+        }
 
-        //check if email and tel valid -> return
+        function telIsValid(tel) {
+            var regex = /^\+7[-(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/;
+            if (regex.test(tel.replace(/ /g,'')))
+                return 1
+            else
+                return 0
+        }
 
-        //check if text exists
+        function alertElementById(id){
+            document.getElementById(id+'-mes').style.visibility = "visible"
+            document.getElementById(id).style.border = "1px solid red"
+        }
 
+        function UnAlertElementById(id){
+            document.getElementById(id+'-mes').style.visibility = "hidden"
+            document.getElementById(id).style.border = "1px solid #c8cbd2"
+        }
+
+        document.getElementById('no-contact-mes').style.visibility = "hidden"
+        document.getElementById('tel').style.border = "1px solid #c8cbd2"
+        document.getElementById('email').style.border = "1px solid #c8cbd2"
+
+        if (!name) {
+            alertElementById('name')
+            return 0
+        } else {
+            UnAlertElementById('name')
+        }
+
+
+        if (!(email==="" && tel==="")) {
+            if (email) {
+                if (!emailIsValid(email)) {
+                    alertElementById('email')
+                    return 0
+                } else {
+                    UnAlertElementById('email')
+                }
+            }
+            if (tel) {
+                if (!telIsValid(tel) || !tel) {
+                    alertElementById('tel')
+                    return 0
+                } else {
+                    UnAlertElementById('tel')
+                }
+            }
+        } else {
+            document.getElementById('no-contact-mes').style.visibility = "visible"
+            document.getElementById('tel').style.border = "1px solid red"
+            document.getElementById('email').style.border = "1px solid red"
+            return 0
+        }
+
+        if (!message) {
+            alertElementById('message')
+            return 0
+        } else {
+            UnAlertElementById('message')
+        }
+        return 1
     }
-    if(document.getElementById('submit').submit()){
-        validateForm();
-    }
+
+    document.getElementById("submit").addEventListener("click", function () {
+        if (validateForm()) {alert('всё ок')}
+    });
+
+
+
 </script>
 
 </body>

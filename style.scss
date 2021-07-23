@@ -3,18 +3,16 @@
 }
 
 html {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 
   background-color: #e5e5e5;
 }
 
-input,
-label {
+input, label {
   display: block;
 }
 
-input,
-textarea {
+input, textarea {
   font-size: 14px;
 
   width: 100%;
@@ -27,7 +25,7 @@ textarea {
   outline: none;
 }
 
-input[type=submit] {
+input[type=button] {
   font-size: .75em;
   font-weight: bold;
 
@@ -35,33 +33,37 @@ input[type=submit] {
   height: 55px;
   margin: 0 auto;
 
+  cursor: pointer;
+
   color: black;
   background-color: #f9c73b;
-}
+  &:hover{
+    background-color: rgba(249, 199, 59, 0.9);
+  &:active{
+    background-color: rgba(249, 199, 59, 0.8);
+  }
+  &:visited{
+    background-color: #f9c73b;
 
-input[type=submit]:hover{
-  background-color: rgba(249, 199, 59, 0.9);
-  cursor: pointer;
-}
-input[type=submit]:active{
-  background-color: rgba(249, 199, 59, 0.8);
-  cursor: pointer;
-}
-input[type=submit]:visited{
-  background-color: #f9c73b;
-  cursor: pointer;
+  }
+  }
 }
 
 section > div {
   display: inline-block;
 }
 
-label {
+label, p {
   font-size: .7em;
 
   margin: 7px 10px 0 35px;
 
   color: #555;
+}
+
+div > p{
+  visibility: hidden;
+  color:red;
 }
 
 .feedback-form {
@@ -84,12 +86,13 @@ form h1 {
 }
 
 form a,
-a:hover {
+a:hover,
+a:visited {
   color: black;
 }
 
 textarea {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 
   width: 100%;
 
