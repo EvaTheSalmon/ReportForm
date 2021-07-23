@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма обратной связи</title>
+</head>
+
+<link rel=preload as=style href="style.css">
+<link rel="stylesheet" type=text/css href="style.css">
+
+<body>
+<div class="feedback-form">
+
+    <form action="index.html">
+        <div>
+            <h1>Обратная связь</h1>
+        </div>
+
+        <section>
+
+            <div>
+                <label for="name">Имя</label>
+                <input type="text" name="name" value="Олег" id="name" placeholder="Иван Иванов"/>
+                <label id="name-mes">Необходимо указать имя</label>
+            </div>
+
+            <div>
+                <label for="tel">Телефон</label>
+                <input type="tel" value="+7 (900) 800 70 60" id="tel" placeholder="+7 (123) 456 78 90"/>
+                <label id="tel-mes">Проверьте введенный телефон</label>
+            </div>
+
+            <div>
+                <label for="email">Эл. почта</label>
+                <input type="email" name="email" value="invalid@mail" id="email" placeholder="example@email.com"/>
+                <label id="email-mes">Проверьте введённый email</label>
+            </div>
+
+        </section>
+
+        <div>
+            <label for="message">Сообщение</label>
+            <textarea name="message" rows="5" id="message" placeholder="Отзыв">Добрый день!</textarea>
+            <label id="mes-mes">Введите сообщение</label>
+        </div>
+
+
+        <p>Отправляя форму, вы соглашаетесь с <a href="#">пользовательским соглашением</a> и <a href="#">политикой
+            конфиденциальности</a></p>
+
+        <input type="submit" id="submit" value="Отправить"/>
+
+    </form>
+</div>
+<script>
+    function validateForm(){
+        name = document.getElementById('name').textContent
+        tel = document.getElementById('tel').textContent
+        email = document.getElementById('email').textContent
+        message = document.getElementById('message').textContent
+
+        if (name == "")
+            document.getElementById('name-mes').style.visibility = "visible"
+            return
+
+        //check if email and tel valid -> return
+
+        //check if text exists
+
+    }
+    if(document.getElementById('submit').submit()){
+        validateForm();
+    }
+</script>
+
+</body>
+</html>

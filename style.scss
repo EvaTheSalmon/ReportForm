@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial;
+
+  background-color: #e5e5e5;
+}
+
+input,
+label {
+  display: block;
+}
+
+input,
+textarea {
+  font-size: 14px;
+
+  width: 100%;
+  margin: 5px 15px;
+  padding: 12px;
+
+  color: black;
+  border: 1px solid #c8cbd2;
+  border-radius: 6px;
+  outline: none;
+}
+
+input[type=submit] {
+  font-size: .75em;
+  font-weight: bold;
+
+  width: 50%;
+  height: 55px;
+  margin: 0 auto;
+
+  color: black;
+  background-color: #f9c73b;
+}
+
+input[type=submit]:hover{
+  background-color: rgba(249, 199, 59, 0.9);
+  cursor: pointer;
+}
+input[type=submit]:active{
+  background-color: rgba(249, 199, 59, 0.8);
+  cursor: pointer;
+}
+input[type=submit]:visited{
+  background-color: #f9c73b;
+  cursor: pointer;
+}
+
+section > div {
+  display: inline-block;
+}
+
+label {
+  font-size: .7em;
+
+  margin: 7px 10px 0 35px;
+
+  color: #555;
+}
+
+.feedback-form {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 30px;
+
+  border-radius: 4px;
+  background-color: white;
+}
+
+form > p {
+  font-size: .8em;
+
+  margin: 25px;
+}
+
+form h1 {
+  margin: 15px;
+}
+
+form a,
+a:hover {
+  color: black;
+}
+
+textarea {
+  font-family: Arial;
+
+  width: 100%;
+
+  resize: none;
+}
