@@ -6,42 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<link rel=preload as=style href="style.css">
-<link rel="stylesheet" type=text/css href="style.css">
+<link rel=preload as=style href="style.min.css">
+<link rel="stylesheet" type=text/css href="style.min.css">
 
 <body>
 <div class="feedback-form">
-
     <form action="index.html">
         <div>
             <h1>Обратная связь</h1>
         </div>
-
         <section>
-
-            <div>
-                <label for="name">Имя</label>
-                <input type="text" name="name" value="Олег" id="name" placeholder="Иван Иванов"/>
-                <p id="name-mes">Необходимо указать имя</p>
-            </div>
-
-            <div>
-                <label for="tel">Телефон</label>
-                <input type="tel" value="+7 (900) 800 70 60" id="tel" placeholder="+7 (123) 456 78 90"/>
-                <p id="tel-mes">Проверьте введенный телефон</p>
-            </div>
-
-            <div>
-                <label for="email">Эл. почта</label>
-                <input type="email" name="email" value="invalid@mail" id="email" placeholder="example@email.com"/>
-                <p id="email-mes">Проверьте введённый email</p>
-            </div>
-
-        </section>
-
         <div>
-            <label for="message">Сообщение</label>
-            <textarea name="message" rows="5" id="message" placeholder="Отзыв">Добрый день!</textarea>
+            <label for="name">
+                <input type="text" name="name" value="Олег" id="name" placeholder="Имя"/>
+                <span>Имя</span>
+            </label>
+            <p id="name-mes">Необходимо указать имя</p>
+        </div><div>
+            <label for="tel">
+                <input type="tel" value="+7 (900) 800 70 60" id="tel" placeholder="Телефон"/>
+                <span>Телефон</span>
+            </label>
+            <p id="tel-mes">Проверьте введенный телефон</p>
+        </div><div>
+            <label for="email">
+                <input type="email" name="email" value="invalid@mail" id="email" placeholder="Эл. почта"/>
+                <span>Эл. почта</span>
+            </label>
+            <p id="email-mes">Проверьте введённый email</p>
+        </div>
+        </section>
+        <div class="message">
+            <label for="message">
+                <textarea name="message" rows="5" id="message" placeholder="Сообщение">Добрый день!</textarea>
+                <span>Сообщение</span>
+            </label>
             <p id="message-mes">Введите сообщение</p>
             <p id="no-contact-mes">Укажите хотя бы один из способов обратной связи</p>
         </div>
