@@ -21,6 +21,11 @@ input, textarea {
   border-radius: 6px;
   outline: none;
 }
+@media screen and (max-width: 380px) {
+  input, textarea {
+    margin: 5px 0 0 0;
+  }
+}
 
 input[type=button] {
   font-size: 0.75em;
@@ -45,11 +50,21 @@ input[type=button]:hover:visited {
 section > div {
   display: inline-block;
 }
+@media screen and (max-width: 380px) {
+  section > div {
+    width: 100%;
+  }
+}
 
 label, p {
   font-size: 0.7em;
   margin: 7px 10px 0 35px;
   color: #555;
+}
+@media screen and (max-width: 380px) {
+  label, p {
+    margin: 7px 10px 0 15px;
+  }
 }
 
 div > p {
@@ -63,6 +78,11 @@ div > p {
   padding: 30px;
   border-radius: 4px;
   background-color: white;
+}
+@media screen and (max-width: 380px) {
+  .feedback-form {
+    padding: 10px;
+  }
 }
 
 form > p {
@@ -84,6 +104,12 @@ textarea {
   font-family: Arial, sans-serif;
   width: 100%;
   resize: none;
+}
+@media screen and (max-width: 380px) {
+  textarea {
+    padding: 10px;
+    margin: 5px 0 0 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

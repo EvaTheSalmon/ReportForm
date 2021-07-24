@@ -1,3 +1,5 @@
+$sm: 380px;
+
 * {
   box-sizing: border-box;
 }
@@ -23,6 +25,11 @@ input, textarea {
   border: 1px solid #c8cbd2;
   border-radius: 6px;
   outline: none;
+
+  @media screen and (max-width: $sm) {
+    margin: 5px 0 0 0;
+  }
+
 }
 
 input[type=button] {
@@ -37,6 +44,7 @@ input[type=button] {
 
   color: black;
   background-color: #f9c73b;
+
   &:hover{
     background-color: rgba(249, 199, 59, 0.9);
   &:active{
@@ -44,13 +52,16 @@ input[type=button] {
   }
   &:visited{
     background-color: #f9c73b;
-
   }
   }
 }
 
 section > div {
   display: inline-block;
+
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
 }
 
 label, p {
@@ -59,6 +70,10 @@ label, p {
   margin: 7px 10px 0 35px;
 
   color: #555;
+
+  @media screen and (max-width: $sm) {
+    margin: 7px 10px 0 15px;
+  }
 }
 
 div > p{
@@ -73,6 +88,10 @@ div > p{
 
   border-radius: 4px;
   background-color: white;
+
+  @media screen and (max-width: $sm) {
+    padding: 10px;
+  }
 }
 
 form > p {
@@ -97,4 +116,9 @@ textarea {
   width: 100%;
 
   resize: none;
+
+  @media screen and (max-width: $sm) {
+    padding: 10px;
+    margin: 5px 0 0 0;
+  }
 }
