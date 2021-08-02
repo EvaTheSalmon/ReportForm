@@ -5,6 +5,8 @@
 
 This is an example of reporting form on html/scss/js.
 
+![](https://github.com/EvaTheSalmon/ReportForm/raw/master/index.png)
+
 As features are: 
   * Floating labels
   * Ajax sending with error reporting
