@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "csso": "^4.2.0",
-    "csso-cli": "^3.0.0"
-  }
-}
